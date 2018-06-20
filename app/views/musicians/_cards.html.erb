@@ -1,0 +1,34 @@
+
+
+<!-- hover minipreview -->
+ <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> -->
+  <!-- MiniPreview stuff here -->
+  <!-- <script type="text/javascript"> -->
+    <!-- $(function() { -->
+    <!--  $('#ccc a').miniPreview({ prefetch: 'pageload' });
+    });
+ <! </script>
+ -->
+
+
+
+<div class="container card-container">
+  <div class="card-musician">
+    <% @musicians.each do |musician| %>
+      <div class="col-xs-12 col-sm-4 card-box zoom">
+        <%= link_to musician_path(musician), class: "card-link" do %>
+
+        <div id="ccc" class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),url('<%= cl_image_path(musician.avatar)%>');">
+        </div>
+        <% end %>
+
+        <div class="card-description">
+          <h2 class="description"><%= musician.first_name + " " + musician.last_name %></h2>
+          <p class="instrument-card"><%= musician.instrument.upcase %></p>
+        </div>
+      </div>
+<% end %>
+  </div>
+</div>
+
+
